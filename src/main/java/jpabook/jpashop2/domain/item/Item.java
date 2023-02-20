@@ -1,6 +1,6 @@
 package jpabook.jpashop2.domain.item;
 
-import jdk.jfr.Enabled;
+//import jdk.jfr.Enabled;
 import jpabook.jpashop2.domain.Category;
 import lombok.Getter;
 import lombok.Setter;
