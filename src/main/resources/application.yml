@@ -7,7 +7,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     properties:
       hibernate:
         show_sql: true #system.out로 출력
@@ -16,4 +16,4 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug #logger로 출력
-    org.hibernate.type: trace
+    #org.hibernate.type: trace
