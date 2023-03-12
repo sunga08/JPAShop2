@@ -1,13 +1,11 @@
 package jpabook.jpashop2.service;
 
 import jpabook.jpashop2.domain.Member;
-import jpabook.jpashop2.repository.MemberRepository;
-import org.junit.Assert;
+import jpabook.jpashop2.repository.MemberRepositoryOld;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,7 +20,7 @@ public class MemberServiceTest {
 
     @Autowired MemberService memberService;
     @Autowired
-    MemberRepository memberRepository;
+    MemberRepositoryOld memberRepositoryOld;
     @Autowired
     EntityManager em;
 
@@ -36,7 +34,7 @@ public class MemberServiceTest {
         Long savedId = memberService.join(member);
 
         //then
-        assertEquals(member, memberRepository.findOne(savedId));
+        assertEquals(member, memberRepositoryOld.findOne(savedId));
     }
 
     @Test(expected = IllegalStateException.class)
